@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Search {{data.colDef.headerName}}</h1>
+<div mat-dialog-content>
+    <ag-grid-angular 
+        style="width: 100%; height: 300px; " 
+        class="ag-theme-balham"
+        [rowData]="data.rowData" 
+        [columnDefs]="data.columnDefs" 
+        (rowClicked)="onRowClicked($event)"
+        (firstDataRendered)="onFirstDataRendered($event)"
+        [rowSelection]="rowSelection">
+    </ag-grid-angular>
+    <mat-dialog-actions>
+        <button mat-stroked-button (click)="onApply()">Apply</button>
+    </mat-dialog-actions>
+    
+</div>
